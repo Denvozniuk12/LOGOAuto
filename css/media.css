@@ -1,0 +1,278 @@
+@media (max-width: 1185px) {
+    #competitions-cards {
+        overflow-x: scroll;
+    }
+
+    #latest-cards {
+        overflow-x: scroll;
+    }
+
+    #reviews-img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 1024px){
+    #banner-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    #banner-img {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 980px){
+    header {
+        padding-top: 0;
+        margin-bottom: 100px;
+    }
+
+    header.menu-open .container {
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav-btn {
+        display: flex;
+        width: 24px;
+        height: 24px;
+        background-color: #FF2E63;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #nav-btn span,
+    #nav-btn span::before,
+    #nav-btn span::after {
+        display: block;
+        width: 16px;
+        height: 3px;
+        background-color: #FFFFFF;
+        border-radius: 7px;
+        transition: .5s
+    }
+
+    #nav-btn span::before,
+    #nav-btn span::after {
+        content: "";
+    }
+
+    #nav-btn span::before {
+        transform: translateY(-5px);
+    }
+
+    #nav-btn span::after {
+        transform: translateY(2px);
+    }
+
+    #nav-btn.active {
+        background-color: #FFFFFF;
+    }
+
+    #nav-btn.active span {
+        height: 0px;
+    }
+
+    #nav-btn.active span::before {
+        transform: rotate(45deg);
+        background-color: #FF2E63;
+        z-index: 2;
+    }
+
+    #nav-btn.active span::after {
+        transform: rotate(-45deg) translateX(2px) translateY(-2px);
+        background-color: #FF2E63;
+        z-index: 2;
+    }
+
+    #header-content-1 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0 9px;
+        transition: .5s;
+        margin-right: 0;
+    }
+
+    #header-content-1.menu-open {
+        padding: 10px 16px 9px;
+        background: #FF2E63;
+        transition: .5s;
+    }
+
+    #header-content-1.menu-open #logo a span:first-child {
+        color: #FFFFFF;
+    }
+    
+    #header-content-1.menu-open #logo a span:nth-child(2) {
+        color: #FFFFFF;
+    }
+    
+
+    #header-content-2 {
+        display: none;
+    }
+
+    #header-content-2.menu-open {
+        padding: 50px 16px 0;
+        margin: 0;
+        position: fixed;
+        top: 57px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;        
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: scroll;
+        animation-name: show-header-mobile-menu;
+        animation-duration: .7s;
+    }
+
+    @keyframes show-header-mobile-menu {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    #header-content-2.close {
+        opacity: 0;
+        transition: .7s;
+    }
+
+    #header-content-2.close {
+        opacity: 0;
+        transition: .4s;
+    }
+
+    #nav-menu {
+        flex-direction: column;
+        margin-right: 0;
+        margin-bottom: 40px;
+        row-gap: 30px;
+    }
+
+    #login-link {
+        display: flex;
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    #banner-container {
+        position: relative;
+        flex-direction: column;
+    }
+
+    #banner-content {
+        margin-bottom: 50px;
+        row-gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    #banner-circle {
+        width: 225px;
+        height: 225px;
+        margin-right: 0;
+    }
+
+    #banner-img-container {
+        right: auto;
+        bottom: 0;
+    }
+
+    #competitions-heading {
+        margin-bottom: 30px;
+    }
+
+    section#how {
+        margin-bottom: 38px;
+    }
+
+    #how-heading {
+        margin-bottom: 30px;
+    }
+
+    #how-content-blocks {
+        flex-direction: column;
+        row-gap: 44.5px;
+    }
+
+    .how-content-block {
+        height: fit-content;
+    }
+
+    .how-arrow {
+        transform: rotate(90deg);
+    }
+
+    #reviews-content {
+        width: 100%;
+        padding: 55px 16px 54px;
+    }
+
+    #reviews-img-container {
+        display: none;
+    }
+
+    #footer-logo {
+        margin-bottom: 30px;
+    }
+
+    #footer-menu {
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    #footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    
+    #footer-menu {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    h2 {
+        font-size: 34.8936px;
+        line-height: 42px;
+    }
+
+    #banner-img {
+        max-width: 425px;
+        max-height: 170px;
+    }
+}
+
+@media (max-width: 360px){
+    #banner-container {
+        align-items: flex-start;
+    }
+
+    #banner-content {
+        align-items: flex-start;
+        text-align: start;
+    }
+
+    #banner-circle {
+       margin-left: 78px;
+    }
+
+    #banner-img-container {
+        right: -50px;
+    }
+}
