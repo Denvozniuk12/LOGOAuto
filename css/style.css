@@ -19,6 +19,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: #346CD9;
+}
+
 ul {
     list-style: none;
 }
@@ -122,11 +126,16 @@ header .container {
 
 #nav-menu li a {
     color: #252A34;
+    transition: .4s;
+}
+
+#nav-menu li a:hover {
+    color: #346CD9;
 }
 
 #header-buttons {
     display: flex;
-    column-gap: 30px;
+    column-gap: 25px;
     align-items: center;
 }
 
@@ -136,6 +145,14 @@ header .container {
     font-size: 16px;
     line-height: 22px;
     color: var(--light-red-color);
+    transition: .4s;
+    padding: 5px;
+}
+
+#login-link:hover {
+    background-color: #252A34;
+    color: #FFFFFF;
+    border-radius: 5px;
 }
 
 #register-btn {
@@ -148,6 +165,11 @@ header .container {
     font-size: 16px;
     line-height: 22px;
     color: #FFFFFF;
+    transition: .4s;
+}
+
+#register-btn:hover {
+    background-color: #252A34;
 }
 
 #nav-btn {
@@ -200,6 +222,11 @@ h2 {
     font-size: 16px;
     line-height: 22px;
     color: #FFFFFF;
+    transition: .4s;
+}
+
+#banner-btn:hover {
+    background-color: #252A34;
 }
 
 #banner-circle {
@@ -288,6 +315,11 @@ section#competitions {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .4s;
+}
+
+.competitions-card-btn:hover {
+    background-color: #252A34;
 }
 
 .competitions-card-btn div {
@@ -537,4 +569,9 @@ footer {
 
 #footer-menu li a {
     color: #FFFFFF;
+    transition: .4s;
+}
+
+#footer-menu li a:hover {
+    color: #252A34;
 }
