@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/swiper.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/media.css">
     <title>LOGOAuto</title>
@@ -39,7 +40,7 @@
             <div class="container">
                 <div id="banner-container">
                     <div id="banner-content">
-                        <h2><span>Could you be our</span><br><span>next winner?</span></h2>
+                        <h1><span>Could you be our</span><br><span>next winner?</span></h1>
                         <div>
                             <button id="banner-btn">Enter now</button>
                         </div>
@@ -53,74 +54,76 @@
         </section>
     
         <section id="competitions">
-            <div class="container" style="padding-right: 0;">
+            <div class="container">
                 <div id="competitions-heading">
-                    <h3>Latest Competitions</h3>
+                    <h2>Latest Competitions</h2>
                 </div>
-                <div id="competitions-cards">
-                    <div class="card">
-                        <div class="competitions-card-img-container">
-                            <img class="competitions-card-img" src="./img/Competitions/Competitions-card-1.webp" alt="Car">
-                        </div>
-                        <div class="competitions-card-content">
-                            <h5>2020 Audi S5 Coupe</h5>
-                            <div class="competitions-card-price">
-                                <h4>$19.99</h4>
-                                <h5>$54.68</h5>
+                <div id="competitions-cards" class="swiper-container">
+                    <div id="competitions-wrapper" class="swiper-wrapper">
+                        <div class="card swiper-slide">
+                            <div class="competitions-card-img-container">
+                                <img class="competitions-card-img" src="./img/Competitions/Competitions-card-1.webp" alt="Car">
                             </div>
-                            <p class="competitions-cards-p">5878 tickets remaining</p>
-                        </div>
-                        <div class="competitions-card-btn-container">
-                            <button class="competitions-card-btn"><div></div></button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="competitions-card-img-container">
-                            <img class="competitions-card-img" src="./img/Competitions/Competitions-card-2.webp" alt="Car">
-                        </div>
-                        <div class="competitions-card-content">
-                            <h5>2016 Ford Mustang GT</h5>
-                            <div class="competitions-card-price">
-                                <h4>$7.99</h4>
-                                <h5>$9.68</h5>
+                            <div class="competitions-card-content">
+                                <h3>2020 Audi S5 Coupe</h3>
+                                <div class="competitions-card-price">
+                                    <span class="competitions-price">$19.99</span>
+                                    <span class="competitions-discount">$54.68</span>
+                                </div>
+                                <p class="competitions-cards-p">5878 tickets remaining</p>
                             </div>
-                            <p class="competitions-cards-p">3290 tickets remaining</p>
-                        </div>
-                        <div class="competitions-card-btn-container">
-                            <button class="competitions-card-btn"><div></div></button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="competitions-card-img-container">
-                            <img class="competitions-card-img" src="./img/Competitions/Competitions-card-3.webp" alt="Car">
-                        </div>
-                        <div class="competitions-card-content">
-                            <h5>2020 Bugatti Chiron</h5>
-                            <div class="competitions-card-price">
-                                <h4>$0.99</h4>
-                                <h5>$1.39</h5>
+                            <div class="competitions-card-btn-container">
+                                <button class="competitions-card-btn"><div></div></button>
                             </div>
-                            <p class="competitions-cards-p">4014 tickets remaining</p>
                         </div>
-                        <div class="competitions-card-btn-container">
-                            <button class="competitions-card-btn"><div></div></button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="competitions-card-img-container">
-                            <img class="competitions-card-img" src="./img/Competitions/Competitions-card-4.webp" alt="Car">
-                        </div>
-                        <div class="competitions-card-content">
-                            <h5>2019 Porsche 911 Carrera</h5>
-                            <div class="competitions-card-price">
-                                <h4>$1.99</h4>
-                                <h5>$2.99</h5>
+                        <div class="card swiper-slide">
+                            <div class="competitions-card-img-container">
+                                <img class="competitions-card-img" src="./img/Competitions/Competitions-card-2.webp" alt="Car">
                             </div>
-                            <p class="competitions-cards-p">484 tickets remaining</p>
+                            <div class="competitions-card-content">
+                                <h3>2016 Ford Mustang GT</h3>
+                                <div class="competitions-card-price">
+                                    <span class="competitions-price">$7.99</span>
+                                    <span class="competitions-discount">$9.68</span>
+                                </div>
+                                <p class="competitions-cards-p">3290 tickets remaining</p>
+                            </div>
+                            <div class="competitions-card-btn-container">
+                                <button class="competitions-card-btn"><div></div></button>
+                            </div>
                         </div>
-                        <div class="competitions-card-btn-container">
-                            <button class="competitions-card-btn"><div></div></button>
+                        <div class="card swiper-slide">
+                            <div class="competitions-card-img-container">
+                                <img class="competitions-card-img" src="./img/Competitions/Competitions-card-3.webp" alt="Car">
+                            </div>
+                            <div class="competitions-card-content">
+                                <h3>2020 Bugatti Chiron</h3>
+                                <div class="competitions-card-price">
+                                    <span class="competitions-price">$0.99</span>
+                                    <span class="competitions-discount">$1.39</span>
+                                </div>
+                                <p class="competitions-cards-p">4014 tickets remaining</p>
+                            </div>
+                            <div class="competitions-card-btn-container">
+                                <button class="competitions-card-btn"><div></div></button>
+                            </div>
                         </div>
+                        <div class="card swiper-slide">
+                            <div class="competitions-card-img-container">
+                                <img class="competitions-card-img" src="./img/Competitions/Competitions-card-4.webp" alt="Car">
+                            </div>
+                            <div class="competitions-card-content">
+                                <h3>2019 Porsche 911 Carrera</h3>
+                                <div class="competitions-card-price">
+                                    <span class="competitions-price">$1.99</span>
+                                    <span class="competitions-discount">$2.99</span>
+                                </div>
+                                <p class="competitions-cards-p">484 tickets remaining</p>
+                            </div>
+                            <div class="competitions-card-btn-container">
+                                <button class="competitions-card-btn"><div></div></button>
+                            </div>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -129,7 +132,7 @@
         <section id="how">
             <div class="container">
                 <div id="how-heading">
-                    <h3>How it works</h3>
+                    <h2>How it works</h2>
                 </div>
                 <div id="how-content-blocks">
                     <div class="how-content-block">
@@ -164,24 +167,52 @@
         </section>
     
         <section id="reviews">
-            <div id="reviews-container">
-                <div id="reviews-content">
-                    <p id="reviews-text-p">"Unbelievable this is a dream come true, no way would I ever think I would<br>own a car like this. What great blokes.<br>Thank you very much!<br>5 star from me!!!"</p>
-                    <p id="reviews-text-name">Danny Churchman</p>
-                    <div id="reviews-content-buttons">
-                        <button id="rBtn-1" class="reviews-content-btn active"></button>
-                        <button id="rBtn-2" class="reviews-content-btn"></button>
-                        <button id="rBtn-3" class="reviews-content-btn"></button>
+            <div class="reviews-container">
+                <div class="reviews-cards">
+                    <div class="reviews-card">
+                        <div class="reviews-content">
+                            <p class="reviews-text-p">"Unbelievable this is a dream come true, no way would I ever think I would<br>own a car like this. What great blokes.<br>Thank you very much!<br>5 star from me!!!"</p>
+                            <p class="reviews-text-name">Danny Churchman</p>
+                            <div class="reviews-content-buttons">
+                                <button class="rBtn-1 reviews-content-btn active"></button>
+                                <button class="rBtn-2 reviews-content-btn"></button>
+                                <button class="rBtn-3 reviews-content-btn"></button>
+                            </div>
+                        </div>
+                    <img class="reviews-img" src="./img/Reviews/Img-1.webp" alt="img">    
                     </div>
+                    <div class="reviews-card">
+                        <div class="reviews-content">
+                            <p class="reviews-text-p">"Unbelievable this is a dream come true, no way would I ever think I would<br>own a car like this. What great blokes.<br>Thank you very much!<br>5 star from me!!!"</p>
+                            <p class="reviews-text-name">Danny Churchman</p>
+                            <div class="reviews-content-buttons">
+                                <button class="rBtn-1 reviews-content-btn active"></button>
+                                <button class="rBtn-2 reviews-content-btn"></button>
+                                <button class="rBtn-3 reviews-content-btn"></button>
+                            </div>
+                        </div>
+                    <img class="reviews-img" src="./img/Reviews/Img-1.webp" alt="img">    
+                    </div>
+                    <div class="reviews-card">
+                        <div class="reviews-content">
+                            <p class="reviews-text-p">"Unbelievable this is a dream come true, no way would I ever think I would<br>own a car like this. What great blokes.<br>Thank you very much!<br>5 star from me!!!"</p>
+                            <p class="reviews-text-name">Danny Churchman</p>
+                            <div class="reviews-content-buttons">
+                                <button class="rBtn-1 reviews-content-btn active"></button>
+                                <button class="rBtn-2 reviews-content-btn"></button>
+                                <button class="rBtn-3 reviews-content-btn"></button>
+                            </div>
+                        </div>
+                    <img class="reviews-img" src="./img/Reviews/Img-1.webp" alt="img">    
+                    </div>    
                 </div>
-                <div id="reviews-img-container"><img id="reviews-img" src="./img/Reviews/Img-1.webp" alt="img"></div>
             </div>
         </section>
     
         <section id="latest">
             <div class="container" style="padding-right: 0;">
                 <div id="latest-heading">
-                    <h3>Latest Winners</h3>
+                    <h2>Latest Winners</h2>
                 </div>
                 <div id="latest-cards">
                     <div class="card latest-card">
@@ -189,7 +220,7 @@
                             <img src="./img/Latest/Ferrari.webp" alt="Ferrari">
                         </div>
                         <div class="latest-card-content">
-                            <h5>Ferrari 458</h5>
+                            <h3>Ferrari 458</h3>
                             <p>12 November 2020</p>
                         </div>
                     </div>
@@ -198,7 +229,7 @@
                             <img src="./img/Latest/Aquila.webp" alt="Aquila">
                         </div>
                         <div class="latest-card-content">
-                            <h5>Aquila Gullwing</h5>
+                            <h3>Aquila Gullwing</h3>
                             <p>9 November 2020</p>
                         </div>
                     </div>
@@ -207,7 +238,7 @@
                             <img src="./img/Latest/Audi.webp" alt="Audi">
                         </div>
                         <div class="latest-card-content">
-                            <h5>2020 Audi S5 Coupe</h5>
+                            <h3>2020 Audi S5 Coupe</h3>
                             <p>5 November 2020</p>
                         </div>
                     </div>
@@ -216,7 +247,7 @@
                             <img src="./img/Latest/Ferrari-SUV.webp" alt="Ferrari-SUV">
                         </div>
                         <div class="latest-card-content">
-                            <h5>Ferrari Purosangue SUV</h5>
+                            <h3>Ferrari Purosangue SUV</h3>
                             <p>25 September 2020</p>
                         </div>
                     </div>
@@ -226,7 +257,7 @@
     </main>
     
     <footer>
-        <div class="container">
+        <div class="container footer-container">
             <div id="footer-content">
                 <div id="footer-logo"><a href="#">LogoAuto</a></div>
                 <ul id="footer-menu">
@@ -240,6 +271,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/main.js"></script>
+    <script id="swiperJS" src="./js/swiper.js"></script>
+    <script id="mainJS" src="./js/main.js"></script>
 </body>
 </html>

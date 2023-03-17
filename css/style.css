@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 :root {
     --light-red-color: #FF2E63;
@@ -27,7 +28,7 @@ ul {
     list-style: none;
 }
 
-h3 {
+h2 {
     font-weight: 700;
     font-size: 36px;
     line-height: 46px;
@@ -35,14 +36,7 @@ h3 {
     /* height: 39px; */
 }
 
-h4 {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 38px;
-    color: var(--light-red-color);
-}
-
-h5 {
+h3 {
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
@@ -64,6 +58,7 @@ button:hover {
 
 .card {
     width: 270px;
+    min-width: 225px;
     height: 283px;
     background-color: #FFFFFF;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
@@ -84,12 +79,15 @@ header .container {
 }
 
 #header-content-1 {
-    margin-right: 30px;
+    /* margin-right: 20px; */
+    width: 27%;
 }
 
 #header-content-2 {
     display: flex;
+    width: 100%;
     align-items: center;
+    justify-content: space-between;
 }
 
 #logo {
@@ -114,7 +112,7 @@ header .container {
 #nav-menu {
     display: flex;
     column-gap: 30px;
-    margin-right: 99px;
+    margin-right: 5px;
 }
 
 #nav-menu li {
@@ -181,10 +179,11 @@ header .container {
 /* BANNER */
 section#banner {
     margin-bottom: 76px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 #banner-container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -198,17 +197,17 @@ section#banner {
     width: 100%;
 }
 
-h2 {
+h1 {
     font-weight: 700;
     font-size: 50px;
     line-height: 60px;
 }
 
-#banner-content h2 span:first-child {
+#banner-content h1 span:first-child {
     color: #343434;
 }
 
-#banner-content h2 span:nth-child(3) {
+#banner-content h1 span:nth-child(3) {
     color: var(--light-red-color);
 }
 
@@ -240,7 +239,7 @@ h2 {
 
 #banner-img-container {
     position: absolute;
-    right: 0;
+    right: -55px;
 }
 
 /* COMPETITIONS */
@@ -256,8 +255,13 @@ section#competitions {
 
 #competitions-cards {
     display: flex;
-    column-gap: 30px;
     height: 300px;
+}
+
+#competitions-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 #competitions-cards .card {
@@ -265,9 +269,13 @@ section#competitions {
 }
 
 .competitions-card-img-container {
-    max-width: 270px;
+    max-width: 280px;
     max-height: 160px;
     margin-bottom: 20px;
+}
+
+.competitions-card-img {
+    width: 100%;
 }
 
 .competitions-card-content {
@@ -282,11 +290,19 @@ section#competitions {
     height: 35px;
 }
 
-.competitions-card-content h5 {
+.competitions-card-content h3 {
     margin-bottom: 5px;
 }
 
-.competitions-card-price h5 {
+.competitions-price {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    color: var(--light-red-color);
+}
+
+
+.competitions-discount {
     margin-bottom: 8px;
     color: #999999;
     text-decoration-line: line-through;
@@ -421,13 +437,25 @@ section#reviews {
     margin-bottom: 100px;
 }
 
-#reviews-container {
+.reviews-container {
     display: flex;
+    max-width: 1280px;
     width: 100%;
     max-height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-#reviews-content {
+.reviews-cards {
+    display: flex;
+}
+
+.reviews-card {
+    display: flex;
+    width: 1280px;
+}
+
+.reviews-content {
     width: 50%;
     max-height: inherit;
     display: flex;
@@ -438,7 +466,7 @@ section#reviews {
     text-align: center;
 }
 
-#reviews-text-p {
+.reviews-text-p {
     max-width: 400px;
     font-family: 'Open Sans';
     font-weight: 600;
@@ -448,7 +476,7 @@ section#reviews {
     margin-bottom: 30px;
 }
 
-#reviews-text-name {
+.reviews-text-name {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 400;
@@ -459,7 +487,7 @@ section#reviews {
     margin-bottom: 40px;
 }
 
-#reviews-content-buttons {
+.reviews-content-buttons {
     display: flex;
     column-gap: 15px;
 }
@@ -476,13 +504,14 @@ section#reviews {
     background-color: #FF2E63
 }
 
-#reviews-img-container {
+.reviews-img-container {
     width: 50%;
     max-height: inherit;
 }
 
-#reviews-img {
-    width: 100%;
+.reviews-img {
+    /* width: 100%; */
+    width: 50%;
     max-height: inherit;
     height: auto;
 }
@@ -518,7 +547,7 @@ section#latest {
     margin-left: 20px;
 }
 
-.latest-card-content h5 {
+.latest-card-content h3 {
     margin-bottom: 7px;
 }
 
@@ -543,7 +572,7 @@ footer {
 }
 
 #footer-logo {
-    margin-right: 30px;
+    margin-right: 10px;
 }
 
 #footer-logo a {

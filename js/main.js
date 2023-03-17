@@ -1,10 +1,128 @@
-var navBtn = document.querySelector('#nav-btn');
-var header = document.querySelector('header');
-var headerContent1 = document.querySelector('#header-content-1');
-var headerContent2 = document.querySelector('#header-content-2');
-var main = document.querySelector('main');
-var footer = document.querySelector('footer');
-// var bannerImg = document.querySelector('#banner-img');
+const navBtn = document.getElementById('nav-btn');
+const header = document.getElementsByTagName('header');
+const headerContent1 = document.getElementById('header-content-1');
+const headerContent2 = document.getElementById('header-content-2');
+const main = document.getElementsByTagName('main');
+const footer = document.getElementsByTagName('footer');
+const cards = document.querySelectorAll('.card');
+const competitionsCards = document.getElementById('competitions-cards');
+const swiperWrapper = document.getElementById('competitions-wrapper');
+let swiper = null;
+
+function removeSwiperCards() {
+    if (swiper !== null) {
+        swiper = null;
+    }
+    while(competitionsCards.hasAttributes()){
+        competitionsCards.removeAttribute(competitionsCards.attributes[0].name);
+    }
+    competitionsCards.setAttribute('id', 'competitions-cards');
+
+    while (swiperWrapper.hasAttributes()) {
+        swiperWrapper.removeAttribute(swiperWrapper.attributes[0].name);
+    }
+    swiperWrapper.setAttribute('id', 'competitions-wrapper');
+    cards.forEach((card) => {
+        while (card.hasAttributes()) {
+            card.removeAttribute(card.attributes[0].name);
+        }
+        card.setAttribute('class', 'card');
+    });
+}
+
+function addSwiperCards(slidesPerViewNumber) {
+    if (!competitionsCards.classList.contains('swiper-container'))
+        competitionsCards.classList.add('swiper-container');
+
+    if (!swiperWrapper.classList.contains('swiper-wrapper'))
+        swiperWrapper.classList.add('swiper-wrapper');
+
+    cards.forEach((card) => {
+        if (!card.classList.contains('swiper-slide'))
+            card.classList.add('swiper-slide');
+    })
+
+    if (swiper === null) {
+        swiper = new Swiper('.swiper-container', {
+            slidesPerView: slidesPerViewNumber,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+}
+
+
+function swiperSliderCards() {
+    if (window.innerWidth < 1112) {
+        if (window.innerWidth < 306) {
+            removeSwiperCards();
+            addSwiperCards(1);
+        }
+
+        else if (window.innerWidth < 362) {
+            removeSwiperCards();
+            addSwiperCards(1.19);
+        }
+
+        else if (window.innerWidth < 385) {
+            removeSwiperCards();
+            addSwiperCards(1.3);
+        }
+
+        else if (window.innerWidth < 437) {
+            removeSwiperCards();
+            addSwiperCards(1.5);
+        }
+
+        else if (window.innerWidth < 512) {
+            removeSwiperCards();
+            addSwiperCards(1.7);
+        }
+
+        else if (window.innerWidth < 620) {
+            removeSwiperCards();
+            addSwiperCards(2);
+        }
+
+        else if (window.innerWidth < 640) {
+            removeSwiperCards();
+            addSwiperCards(2.2);
+        }
+
+        else if (window.innerWidth < 768) {
+            removeSwiperCards();
+            addSwiperCards(2.5);
+        }
+
+        else if (window.innerWidth < 896) {
+            removeSwiperCards();
+            addSwiperCards(3);
+        }
+
+        else if (window.innerWidth < 1024) {
+            removeSwiperCards();
+            addSwiperCards(3.5);
+        }
+        else {
+            removeSwiperCards();
+            addSwiperCards(3.7);
+        }
+    }
+
+    else {
+        removeSwiperCards();
+    }
+}
+
+swiperSliderCards();
+
+window.addEventListener('resize', function() {
+    swiperSliderCards();
+});
+
 
 navBtn.onclick = function() {
     if(!navBtn.classList.contains('active')){
@@ -29,57 +147,80 @@ navBtn.onclick = function() {
     }
 }
 
-var rBtn1 = document.querySelector('#rBtn-1');
-var rBtn2 = document.querySelector('#rBtn-2');
-var rBtn3 = document.querySelector('#rBtn-3');
+const reviewsCards = document.querySelector('.reviews-cards');
+const reviewsCard = document.querySelector('.reviews-card');
+let startPosition = 0;
+let currentPosition = startPosition;
 
-rBtn1.onclick = function () {
-    if(!rBtn1.classList.contains('active')){
-        if(rBtn2.classList.contains('active'))
-            rBtn2.classList.remove('active');
-        else if (rBtn3.classList.contains('active'))
-            rBtn3.classList.remove('active');
+let reviewsCardWidth = reviewsCard.clientWidth;
+const rBtn1 = document.querySelectorAll('.rBtn-1');
+const rBtn2 = document.querySelectorAll('.rBtn-2');
+const rBtn3 = document.querySelectorAll('.rBtn-3');
 
-        rBtn1.classList.add('active');
+const rBtnList = [rBtn1, rBtn2, rBtn3];
+
+window.addEventListener('resize', function () {
+    reviewsCardWidth = document.querySelector('.reviews-card').clientWidth;
+});
+
+
+
+function transformReviewsCards(cardList, currentPositionElement) {
+    cardList.setAttribute('style', 'transform: translateX(' + currentPositionElement + 'px); transition-duration: .7s;');
+    setTimeout(function() {
+        cardList.setAttribute('style', 'transform: translateX(' + currentPositionElement + 'px);');
+    }, 700);
+}
+function rBtnSetActive(rBtnActive, rBtnNotActive1, rBtnNotActive2) {
+    rBtnActive.forEach(function(rbAc){
+        if(!rbAc.classList.contains('active')){
+            rbAc.classList.add('active');
+        }
+    });
+    rBtnNotActive1.forEach(function(rbNotAc1){
+        if(rbNotAc1.classList.contains('active'))
+            rbNotAc1.classList.remove('active');
+    });
+    rBtnNotActive2.forEach(function(rbNotAc2){
+        if(rbNotAc2.classList.contains('active'))
+            rbNotAc2.classList.remove('active');
+    });
+}
+
+function changeCurrentPosition(index) {
+    currentPosition = startPosition - (reviewsCardWidth * index);
+}
+
+for (let i = 0; i < rBtnList.length; i++){
+    for (let j = 0; j < rBtnList[i].length; j++) {
+        rBtnList[i][j].onclick = (function(i, j) {
+            return function() {
+                switch(rBtnList[i]){
+                    case rBtn1:
+                        if(!rBtn1[0].classList.contains('active')){
+                            rBtnSetActive(rBtn1, rBtn2, rBtn3);
+                            changeCurrentPosition(i);
+                            transformReviewsCards(reviewsCards, currentPosition);
+                        }
+                        break;
+                    case rBtn2:
+                        if(!rBtn2[0].classList.contains('active')){
+                            rBtnSetActive(rBtn2, rBtn1, rBtn3);
+                            changeCurrentPosition(i);
+                            transformReviewsCards(reviewsCards, currentPosition);
+                        }
+                        break;
+                    case rBtn3:
+                        if(!rBtn3[0].classList.contains('active')){
+                            rBtnSetActive(rBtn3, rBtn2, rBtn1);
+                            changeCurrentPosition(i);
+                            transformReviewsCards(reviewsCards, currentPosition);
+                        }
+                        break;
+                }
+            }
+        })(i, j);
     }
 }
 
-rBtn2.onclick = function() {
-    if(!rBtn2.classList.contains('active')){
-        if(rBtn1.classList.contains('active'))
-            rBtn1.classList.remove('active');
-        else if (rBtn3.classList.contains('active'))
-            rBtn3.classList.remove('active');
 
-        rBtn2.classList.add('active');
-    }
-}
-
-rBtn3.onclick = function () {
-    if(!rBtn3.classList.contains('active')){
-        if(rBtn1.classList.contains('active'))
-            rBtn1.classList.remove('active');
-        else if (rBtn2.classList.contains('active'))
-            rBtn2.classList.remove('active');
-
-        rBtn3.classList.add('active');
-    }
-}
-
-// var mediaQuery500px = window.matchMedia('(max-width: 500px)');
-
-// function changes(mediaQuery500px) {
-//     // if (mediaQuery500px.matches)   // less than 500 px
-//     // {
-//     //     bannerImg.src = './img/Banner/Banner-car-mobile.webp';
-//     // }
-//     // else    // more than 500
-//     // {
-//     //     bannerImg.src = './img/Banner/Banner-car.webp';
-//     // }
-// }
-
-// if (matchMedia){
-//     mediaQuery500px.addListener(changes);
-//     changes(mediaQuery500px);
-// }
