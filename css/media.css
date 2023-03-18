@@ -5,20 +5,12 @@
 }
 
 @media (max-width: 1185px) {
-    /* #competitions-cards {
-        overflow-x: scroll;
-    } */
-
     #nav-menu li {
         font-size: 13px;
     }
 
     #login-link, #register-btn {
         font-size: 15px;
-    }
-
-    #latest-cards {
-        overflow-x: scroll;
     }
 
     #reviews-img {
@@ -143,27 +135,22 @@
         align-items: flex-start;
         overflow: scroll;
         animation-name: show-header-mobile-menu;
-        animation-duration: .7s;
+        animation-duration: .5s;
         justify-content: flex-start;
     }
 
     @keyframes show-header-mobile-menu {
         0%{
-            opacity: 0;
+            transform: translateX(-100%);
         }
         100%{
-            opacity: 1;
+            transform: translateX(0);
         }
     }
 
     #header-content-2.close {
-        opacity: 0;
-        transition: .7s;
-    }
-
-    #header-content-2.close {
-        opacity: 0;
-        transition: .4s;
+        transform: translateX(-100%);
+        transition: .5s;
     }
 
     #nav-menu {
@@ -355,4 +342,12 @@
         max-width: 425px;
         max-height: 170px;
     }
+}
+
+@media (max-width: 333px){
+   h2 {
+    font-size: 29px;
+    height: inherit;
+    line-height: inherit;
+   }
 }

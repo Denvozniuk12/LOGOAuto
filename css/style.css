@@ -529,8 +529,13 @@ section#latest {
 
 #latest-cards {
     display: flex;
-    column-gap: 30px;
     height: 305px;
+}
+
+#latest-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .latest-card {
@@ -538,9 +543,13 @@ section#latest {
 }
 
 .latest-card-img-container {
-    max-width: 270px;
+    max-width: 280px;
     max-height: 200px;
     margin-bottom: 20px;
+}
+
+.latest-card-img-container img {
+    width: 100%;
 }
 
 .latest-card-content {

@@ -1,41 +1,88 @@
 const navBtn = document.getElementById('nav-btn');
-const header = document.getElementsByTagName('header');
+const header = document.querySelector('header');
 const headerContent1 = document.getElementById('header-content-1');
 const headerContent2 = document.getElementById('header-content-2');
-const main = document.getElementsByTagName('main');
-const footer = document.getElementsByTagName('footer');
+const main = document.querySelector('main');
+const footer = document.querySelector('footer');
 const cards = document.querySelectorAll('.card');
-const competitionsCards = document.getElementById('competitions-cards');
-const swiperWrapper = document.getElementById('competitions-wrapper');
+const competitionsHeading = document.getElementById('competitions-heading');
+const latestHeading = document.getElementById('latest-heading');
+let competitionsCards = document.getElementById('competitions-cards');
+let latestCards = document.getElementById('latest-cards');
+const competitionsWrapper = document.getElementById('competitions-wrapper');
+const latestWrapper = document.getElementById('latest-wrapper');
 let swiper = null;
+let changeCards = false;
+let window1112px = false;
+let window1024px = false;
+let window896px = false;
+let window768px = false;
+let window640px = false;
+let window620px = false;
+let window512px = false;
+let window437px = false;
+let window385px = false;
+let window362px = false;
+let window306px = false;
+
 
 function removeSwiperCards() {
     if (swiper !== null) {
         swiper = null;
     }
-    while(competitionsCards.hasAttributes()){
-        competitionsCards.removeAttribute(competitionsCards.attributes[0].name);
-    }
-    competitionsCards.setAttribute('id', 'competitions-cards');
-
-    while (swiperWrapper.hasAttributes()) {
-        swiperWrapper.removeAttribute(swiperWrapper.attributes[0].name);
-    }
-    swiperWrapper.setAttribute('id', 'competitions-wrapper');
-    cards.forEach((card) => {
-        while (card.hasAttributes()) {
-            card.removeAttribute(card.attributes[0].name);
+    if (changeCards) {
+        while (competitionsWrapper.hasAttributes()) {
+            competitionsWrapper.removeAttribute(competitionsWrapper.attributes[0].name);
         }
-        card.setAttribute('class', 'card');
-    });
+        competitionsWrapper.setAttribute('id', 'competitions-wrapper');
+
+        while (latestWrapper.hasAttributes()) {
+            latestWrapper.removeAttribute(latestWrapper.attributes[0].name);
+        }
+        latestWrapper.setAttribute('id', 'latest-wrapper');
+
+        cards.forEach((card) => {
+            while (card.hasAttributes()) {
+                card.removeAttribute(card.attributes[0].name);
+            }
+            card.setAttribute('class', 'card');
+        });
+
+
+        competitionsCards.remove();
+        latestCards.remove();
+        competitionsCards = null;
+        latestCards = null;
+
+        const compCards = document.createElement('div');
+        compCards.setAttribute('id', 'competitions-cards');
+        compCards.appendChild(competitionsWrapper);
+        competitionsCards = compCards;
+        competitionsHeading.insertAdjacentElement('afterend', competitionsCards);
+
+        const latCards = document.createElement('div');
+        latCards.setAttribute('id', 'latest-cards');
+        latCards.appendChild(latestWrapper);
+        latestCards = latCards;
+        latestHeading.insertAdjacentElement('afterend', latestCards);
+
+        changeCards = false;
+    }
 }
 
 function addSwiperCards(slidesPerViewNumber) {
     if (!competitionsCards.classList.contains('swiper-container'))
         competitionsCards.classList.add('swiper-container');
 
-    if (!swiperWrapper.classList.contains('swiper-wrapper'))
-        swiperWrapper.classList.add('swiper-wrapper');
+    if (!latestCards.classList.contains('swiper-container'))
+        latestCards.classList.add('swiper-container');
+
+
+    if (!competitionsWrapper.classList.contains('swiper-wrapper'))
+        competitionsWrapper.classList.add('swiper-wrapper');
+
+    if (!latestWrapper.classList.contains('swiper-wrapper'))
+        latestWrapper.classList.add('swiper-wrapper');
 
     cards.forEach((card) => {
         if (!card.classList.contains('swiper-slide'))
@@ -54,78 +101,156 @@ function addSwiperCards(slidesPerViewNumber) {
     }
 }
 
+function resetWindowSceen() {
+    window1112px = false;
+    window1024px = false;
+    window896px = false;
+    window768px = false;
+    window640px = false;
+    window620px = false;
+    window512px = false;
+    window437px = false;
+    window385px = false;
+    window362px = false;
+    window306px = false;
+}
 
 function swiperSliderCards() {
     if (window.innerWidth < 1112) {
         if (window.innerWidth < 306) {
-            removeSwiperCards();
-            addSwiperCards(1);
+            if(!window306px){
+                removeSwiperCards();
+                addSwiperCards(1);
+                resetWindowSceen();
+                window306px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 362) {
-            removeSwiperCards();
-            addSwiperCards(1.19);
+            if(!window362px){
+                removeSwiperCards();
+                addSwiperCards(1.19);
+                resetWindowSceen();
+                window362px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 385) {
-            removeSwiperCards();
-            addSwiperCards(1.3);
+            if(!window385px){
+                removeSwiperCards();
+                addSwiperCards(1.3);
+                resetWindowSceen();
+                window385px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 437) {
-            removeSwiperCards();
-            addSwiperCards(1.5);
+            if(!window437px){
+                removeSwiperCards();
+                addSwiperCards(1.5);
+                resetWindowSceen();
+                window437px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 512) {
-            removeSwiperCards();
-            addSwiperCards(1.7);
+            if(!window512px){
+                removeSwiperCards();
+                addSwiperCards(1.7);
+                resetWindowSceen();
+                window512px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 620) {
-            removeSwiperCards();
-            addSwiperCards(2);
+            if(!window620px){
+                removeSwiperCards();
+                addSwiperCards(2);
+                resetWindowSceen();
+                window620px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 640) {
-            removeSwiperCards();
-            addSwiperCards(2.2);
+            if(!window640px){
+                removeSwiperCards();
+                addSwiperCards(2.2);
+                resetWindowSceen();
+                window640px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 768) {
-            removeSwiperCards();
-            addSwiperCards(2.5);
+            if(!window768px){
+                removeSwiperCards();
+                addSwiperCards(2.5);
+                resetWindowSceen();
+                window768px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 896) {
-            removeSwiperCards();
-            addSwiperCards(3);
+            if(!window896px){
+                removeSwiperCards();
+                addSwiperCards(3);
+                resetWindowSceen();
+                window896px = true;
+                changeCards = true;
+            }
         }
 
         else if (window.innerWidth < 1024) {
-            removeSwiperCards();
-            addSwiperCards(3.5);
+            if(!window1024px){
+                removeSwiperCards();
+                addSwiperCards(3.5);
+                resetWindowSceen();
+                window1024px = true;
+                changeCards = true;
+            }
         }
         else {
-            removeSwiperCards();
-            addSwiperCards(3.7);
+            if(!window1112px){
+                removeSwiperCards();
+                addSwiperCards(3.7);
+                resetWindowSceen();
+                window1112px = true;
+                changeCards = true;
+            }          
         }
     }
 
     else {
+        if(window1112px || window1024px || window896px || window768px || window640px || window620px || window512px || window437px ||
+            window385px || window362px || window306px){
+            
+            resetWindowSceen();
+            changeCards = true;
+        }
         removeSwiperCards();
     }
 }
 
 swiperSliderCards();
 
-window.addEventListener('resize', function() {
+
+window.addEventListener('resize', function(){
     swiperSliderCards();
 });
 
 
-navBtn.onclick = function() {
-    if(!navBtn.classList.contains('active')){
+navBtn.onclick = function () {
+    if (headerContent2.classList.contains('close')) {
+        return;
+    }
+    if (!navBtn.classList.contains('active')) {
         navBtn.classList.add('active');
         header.classList.add('menu-open');
         headerContent1.classList.add('menu-open');
@@ -133,7 +258,7 @@ navBtn.onclick = function() {
         main.style = "display: none";
         footer.style = "display: none";
     }
-    else{
+    else {
         navBtn.classList.remove('active');
         header.classList.remove('menu-open');
         headerContent1.classList.remove('menu-open');
@@ -143,7 +268,7 @@ navBtn.onclick = function() {
         setTimeout(() => {
             headerContent2.classList.remove('close');
             headerContent2.classList.remove('menu-open');
-        }, 700)
+        }, 500)
     }
 }
 
